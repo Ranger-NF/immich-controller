@@ -1,0 +1,8 @@
+{
+  "name": "Docker Controller",
+  "description": "Start/Stop and even check status of docker container using a click",
+  "uuid": "dockercontroller@fahad",
+  "shell-version": [
+    "43"
+  ]
+}
