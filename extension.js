@@ -11,7 +11,7 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Domain = Gettext.domain(Me.metadata.uuid);
 
-ExtensionUtils.initTranslations(Domain);
+ExtensionUtils.initTranslations(Me.metadata.uuid);
 const _ = Domain.gettext;
 
 const Scripts = {
@@ -30,11 +30,11 @@ const extensionTitle = "🌸 Immich";
 class ImmichPanelIcon {
 	constructor() {
 		this._workingIcon = new St.Icon({
-			gicon: Gio.icon_new_for_string(Me + '/icons/immich.svg'),
+			gicon: Gio.icon_new_for_string(Me.path + '/icons/immich.svg'),
 			icon_size: 20
 		});
 		this._pausedIcon = new St.Icon({
-			gicon: Gio.icon_new_for_string(Me + '/icons/immich-paused.svg'),
+			gicon: Gio.icon_new_for_string(Me.path + '/icons/immich-paused.svg'),
 			icon_size: 20
 		});
 		this.actor = new St.Bin();
